@@ -6,7 +6,7 @@ Compiled from six source files, in chronological order. Content is kept as writt
 |---|---|---|---|
 | 1 | [Pre-Kickoff Notes](#1-pre-kickoff-notes) | `pre-kickoff-harbor-and-pine.docx` | May 8, 2026 |
 | 2 | [PRD v0.9](#2-prd-v09) | `00-harbor-and-pine-prd-v0_9.pdf` | May 11, 2026 |
-| 3 | [Whiteboard: Day of Tour](#3-whiteboard-day-of-tour) | `01-whiteboard-day-of-tour.png` | Undated |
+| 3 | [Whiteboard: Day of Tour](#3-whiteboard-day-of-tour) | `Whiteboard Image Information/01-whiteboard-day-of-tour.png` | Undated |
 | 4 | [Product Kickoff Transcript](#4-product-kickoff-transcript) | `02-kickoff-transcript.docx` | May 12, 2026 |
 | 5 | [Guide Interview Notes](#5-guide-interview-notes) | `04-guide-interview-notes.docx` | May 13–14, 2026 |
 | 6 | [Competitor Overview: GetYourGuide](#6-competitor-overview-getyourguide) | `05-competitor-overview-getyourguide.pdf` | Undated |
