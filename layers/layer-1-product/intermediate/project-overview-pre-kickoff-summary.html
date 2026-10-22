@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor &amp; Pine — estado antes de la pre-kickoff</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f5f1;
+    --ink: #1f2421;
+    --muted: #66695f;
+    --line: #e2e0d8;
+    --paper: #fbfaf7;
+    --pine: #2d6a58;
+    --pine-tint: #e3eee9;
+    --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 56px 24px 72px; }
+  .mono { font-family: var(--mono); }
+
+  header { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items: end; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--pine); margin: 0 0 12px; }
+  h1 { text-wrap: balance; font-size: clamp(28px, 4vw, 40px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 600; margin: 0; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0; }
+  .meta strong { color: var(--ink); font-weight: 500; }
+
+  .tension { display: grid; grid-template-columns: 2fr 1fr; margin-top: 32px; background: var(--ink); color: #eceae3; border-radius: 20px; overflow: hidden; }
+  .tension > div { padding: 36px; }
+  .tension .side { border-left: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03); display: flex; flex-direction: column; justify-content: center; }
+  .tension h2 { font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; line-height: 1.2; font-weight: 600; margin: 0 0 14px; max-width: 24ch; }
+  .tension p { margin: 0; color: #c9c7be; max-width: 56ch; }
+  .vs { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #8fb8a9; margin: 0 0 8px; }
+  .big { font-size: 34px; letter-spacing: -0.03em; font-weight: 600; line-height: 1.1; }
+  .big small { display: block; font-size: 13px; font-weight: 400; color: #aeb0a6; letter-spacing: 0; margin-top: 4px; }
+
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); margin: 28px 0 8px; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: var(--line); }
+  .tl { position: relative; padding-top: 24px; padding-right: 16px; font-size: 14px; }
+  .tl::before { content: ""; position: absolute; left: 0; top: 0; width: 15px; height: 15px; border-radius: 50%; background: var(--bg); border: 2px solid var(--pine); }
+  .tl b { display: block; font-family: var(--mono); font-weight: 500; font-size: 12px; color: var(--pine); letter-spacing: .04em; }
+  .tl span { color: var(--muted); }
+
+  section { margin-top: 56px; }
+  .sh { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 0 0 8px; }
+  h2.title { font-size: 22px; letter-spacing: -0.02em; font-weight: 600; margin: 0; }
+  .ref { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .lede { margin: 0 0 18px; color: var(--muted); font-size: 14px; max-width: 70ch; }
+  .split { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; }
+
+  .facts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .facts li { display: grid; grid-template-columns: 132px 1fr; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); align-items: start; }
+  .facts .tags { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+  .chip { display: inline-block; font-family: var(--mono); font-size: 11px; letter-spacing: .03em; padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid var(--line); background: var(--paper); color: var(--muted); }
+  .chip.client { background: var(--pine); border-color: var(--pine); color: #f2f7f4; }
+  .chip.sales { background: var(--pine-tint); border-color: #c4dbd1; color: #204d40; }
+  .chip.team { background: #ebe9e1; color: #4a4c44; }
+  .chip.open { background: transparent; border: 1px dashed #8a8c82; color: #4a4c44; }
+  .flag { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; color: var(--pine); border-left: 3px solid var(--pine); padding-left: 7px; line-height: 1.2; font-weight: 500; }
+  .cite { font-family: var(--mono); font-size: 11px; color: var(--muted); text-decoration: none; border-bottom: 1px dotted #a9aba0; white-space: nowrap; margin-left: 2px; }
+  a.cite:hover { color: var(--pine); border-color: var(--pine); }
+
+  .phrases { border-top: 1px solid var(--line); }
+  .phrase { padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .phrase q { quotes: none; display: block; font-size: 18px; font-weight: 500; letter-spacing: -0.01em; }
+  .phrase p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+
+  .tens { list-style: none; counter-reset: t; margin: 0; padding: 0; }
+  .tens li { counter-increment: t; position: relative; padding: 14px 0 14px 40px; border-top: 1px solid var(--line); }
+  .tens li:last-child { border-bottom: 1px solid var(--line); }
+  .tens li::before { content: counter(t, decimal-leading-zero); position: absolute; left: 0; top: 16px; font-family: var(--mono); font-size: 12px; color: var(--pine); }
+  .tens b { font-weight: 600; }
+  .tens span.sub { color: var(--muted); display: block; font-size: 15px; }
+
+  .note { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; }
+  .note h3 { margin: 0 0 10px; font-size: 15px; font-weight: 600; }
+  .note ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
+  .note li { margin: 4px 0; }
+  .note p { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+  .note p:last-child { margin-bottom: 0; }
+
+  .qs { list-style: none; margin: 0; padding: 0; counter-reset: q; display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; border-top: 1px solid var(--line); }
+  .qs li { counter-increment: q; position: relative; padding: 14px 0 14px 36px; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .qs li::before { content: counter(q); position: absolute; left: 0; top: 14px; width: 22px; height: 22px; border-radius: 50%; background: var(--pine-tint); color: var(--pine); font-family: var(--mono); font-size: 12px; text-align: center; line-height: 22px; }
+  .qs em { display: block; font-style: normal; font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+  /* document summaries */
+  .docs { border-top: 1px solid var(--line); }
+  details.doc { border-bottom: 1px solid var(--line); }
+  details.doc > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 28px 1fr auto; gap: 12px; align-items: baseline; padding: 16px 0; }
+  details.doc > summary::-webkit-details-marker { display: none; }
+  details.doc > summary::before { content: "+"; font-family: var(--mono); color: var(--pine); font-size: 18px; transition: transform .25s cubic-bezier(.16,1,.3,1); display: inline-block; }
+  details.doc[open] > summary::before { transform: rotate(45deg); }
+  details.doc > summary:hover .dt { color: var(--pine); }
+  .dt { font-weight: 600; letter-spacing: -0.01em; }
+  .dm { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .dbody { padding: 0 0 22px 40px; display: grid; grid-template-columns: 2fr 1fr; gap: 32px; }
+  .dbody ul { margin: 0; padding-left: 18px; font-size: 15px; }
+  .dbody li { margin: 5px 0; }
+  .dbody .no { font-size: 14px; color: var(--muted); border-left: 1px solid var(--line); padding-left: 20px; }
+  .dbody .no b { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); font-weight: 500; margin-bottom: 6px; }
+  .dfile { font-family: var(--mono); font-size: 11px; color: var(--muted); margin: 0 0 8px 40px; }
+
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; display: flex; gap: 16px; justify-content: space-between; flex-wrap: wrap; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .rise { opacity: 0; transform: translateY(8px); animation: rise .6s cubic-bezier(.16,1,.3,1) forwards; animation-delay: calc(var(--i, 0) * 80ms); }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+  }
+
+  @media (max-width: 767px) {
+    .wrap { padding: 32px 16px 56px; }
+    header, .tension, .split, .qs, .dbody { grid-template-columns: 1fr; }
+    .tension .side { border-left: 0; border-top: 1px solid rgba(255,255,255,.12); }
+    .tension > div { padding: 24px; }
+    .timeline { grid-template-columns: 1fr; gap: 14px; }
+    .timeline::before { display: none; }
+    .tl { padding-left: 28px; padding-top: 0; }
+    .tl::before { top: 5px; }
+    .facts li { grid-template-columns: 1fr; gap: 8px; }
+    .facts .tags { flex-direction: row; flex-wrap: wrap; align-items: center; }
+    .split { gap: 32px; }
+    details.doc > summary { grid-template-columns: 24px 1fr; }
+    .dm { grid-column: 2; }
+    .dbody { padding-left: 0; }
+    .dbody .no { border-left: 0; padding-left: 0; }
+    .dfile { margin-left: 0; }
+  }
+
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .wrap { padding: 0; max-width: none; }
+    .rise { opacity: 1; transform: none; animation: none; }
+    .tension { background: #fff; color: var(--ink); border: 1px solid var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .tension p, .big small { color: #444; }
+    .vs { color: var(--pine); }
+    .tension .side { background: #f3f3ef; border-left-color: #ccc; }
+    section { margin-top: 28px; }
+    .facts li, .phrase, .tens li, .qs li, details.doc { break-inside: avoid; }
+    .chip.client { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="rise" style="--i:0">
+    <div>
+      <p class="eyebrow">Harbor &amp; Pine &middot; Borrador</p>
+      <h1>D&oacute;nde est&aacute; el proyecto antes de la pre&#8209;kickoff</h1>
+    </div>
+    <p class="meta"><strong>Armado desde 6 documentos, 8&ndash;14 de mayo.</strong> Nada de esto es consenso. Una etiqueta dice qui&eacute;n lo dijo, no que se haya acordado.</p>
+  </header>
+
+  <div class="tension rise" style="--i:1">
+    <div>
+      <p class="vs">La tensi&oacute;n central</p>
+      <h2>Lo firmado es dise&ntilde;o. El cliente quiere un piloto en vivo.</h2>
+      <p>El Executive Lead quiere reservas, pagos, vouchers y una primera experiencia de IA "running in Lisbon and Barcelona by then". El Tech Lead dijo "I cannot confirm a live launch in that window." Producto dijo que no se acord&oacute; el alcance ni la fecha.</p>
+    </div>
+    <div class="side">
+      <div class="big">550 h<small>Fase 1: de discovery a dise&ntilde;o de alta fidelidad, con input t&eacute;cnico. El desarrollo es otra fase.</small></div>
+    </div>
+  </div>
+
+  <div class="timeline rise" style="--i:2">
+    <div class="tl"><b>8 MAY</b><span>Notas del Product Director tras un handoff con Sales</span></div>
+    <div class="tl"><b>11 MAY</b><span>PRD v0.9, borrador del equipo</span></div>
+    <div class="tl"><b>12 MAY</b><span>Kickoff: extracto de transcripci&oacute;n, cortado en 25:00</span></div>
+    <div class="tl"><b>13&ndash;14 MAY</b><span>Dos entrevistas a gu&iacute;as, sin ver un tour</span></div>
+  </div>
+
+  <section class="rise" style="--i:3" id="producto">
+    <div class="sh"><h2 class="title">Qu&eacute; se construye</h2><span class="ref">overview &sect;0, &sect;4, &sect;7</span></div>
+    <p class="lede"><span class="flag">CLAVE</span> marca lo que determina qu&eacute; se construye o si se puede. Es una selecci&oacute;n editorial m&iacute;a, no algo que digan las fuentes. Las etiquetas dicen qui&eacute;n lo dijo.</p>
+    <ul class="facts">
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip team">Borrador del equipo</span></div><div>Usuarios: viajero, gu&iacute;a, Operaciones, operador y socio hotelero, m&aacute;s un asistente de IA antes y durante la actividad. Mercados piloto: Lisboa y Barcelona. <a class="cite" href="#d-prd" data-c="00-harbor-and-pine-prd-v0.9.pdf:p1">PRD p1</a></div></li>
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip client">Lo dijo el cliente</span></div><div>Es un link, no una app: sin descarga obligatoria, sin cuenta para reservar, y el itinerario de la compu al tel&eacute;fono. <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:133">KO 133</a> <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:148">KO 148</a></div></li>
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip client">Lo dijo el cliente</span></div><div>La reserva no siempre es inmediata. Se confirma al instante con disponibilidad conectada. En el resto, el operador tiene que aceptar despu&eacute;s de autorizar el pago. <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:52">KO 52</a> <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:58">KO 58</a></div></li>
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip client">Lo dijo el cliente</span></div><div>El d&iacute;a del tour, la informaci&oacute;n cr&iacute;tica debe funcionar con mala conexi&oacute;n. Qu&eacute; cuenta como cr&iacute;tica no est&aacute; definido. <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:133">KO 133</a> <a class="cite" href="#d-prd" data-c="00-harbor-and-pine-prd-v0.9.pdf:p3">PRD p3</a></div></li>
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip client">Lo dijo el cliente</span></div><div>La IA recomienda, pero no cambia una reserva paga por su cuenta: "Let us not have it change a paid booking on its own." Qu&eacute; hace primero no est&aacute; elegido. <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:112">KO 112</a> <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:106">KO 106</a></div></li>
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip team">Borrador del equipo</span></div><div>Los gu&iacute;as ven agenda y datos del grupo, registran asistencia y reportan demoras, en tel&eacute;fonos viejos y con poco tipeo. <a class="cite" href="#d-prd" data-c="00-harbor-and-pine-prd-v0.9.pdf:p3">PRD p3</a></div></li>
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip client">Lo dijo el cliente</span></div><div>Hoteles: la oportunidad sigue visible, pero no es el primer lanzamiento y "it should not delay the pilot". <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:76">KO 76</a></div></li>
+    </ul>
+  </section>
+
+  <section class="rise" style="--i:4" id="condiciona">
+    <div class="sh"><h2 class="title">Qu&eacute; condiciona si se puede construir</h2><span class="ref">overview &sect;2, &sect;5, &sect;6</span></div>
+    <ul class="facts" style="margin-top:18px">
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip team">Borrador del equipo</span></div><div>Alcance firmado: 550 horas de estrategia y dise&ntilde;o con input t&eacute;cnico. El desarrollo es otra fase. El SOW no est&aacute; en la carpeta. <a class="cite" href="#d-pk" data-c="pre-kickoff-harbor-and-pine.md:50">PK 50</a> <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:169">KO 169</a></div></li>
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip team">Borrador del equipo</span></div><div>Nadie evalu&oacute; los sistemas: "We have not assessed the systems or estimated implementation." <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:175">KO 175</a> <a class="cite" href="#d-prd" data-c="00-harbor-and-pine-prd-v0.9.pdf:p4">PRD p4</a></div></li>
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip client">Lo dijo el cliente</span></div><div>Los operadores no cambian todos: "I cannot promise that all their systems change with ours." <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:40">KO 40</a></div></li>
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip open">Abierto</span></div><div>No se sabe qu&eacute; parte del cat&aacute;logo tiene disponibilidad conectada. Operaciones tiene que revisarlo. <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:52">KO 52</a></div></li>
+      <li><div class="tags"><span class="flag">CLAVE</span><span class="chip open">Abierto</span></div><div>Qui&eacute;n aprueba cambios a reservas pagas y qui&eacute;n resuelve conflictos con pol&iacute;ticas del operador no est&aacute; definido. <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:118">KO 118</a> <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:199">KO 199</a></div></li>
+      <li><div class="tags"><span class="chip open">Abierto</span></div><div>Sin KPIs base. Sobre el abandono por esperas: "Not as a clean number." <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:49">KO 49</a></div></li>
+    </ul>
+  </section>
+
+  <section class="rise" style="--i:5">
+    <div class="sh"><h2 class="title">Tres frases para leer con cuidado</h2><span class="ref">overview &sect;2, &sect;3</span></div>
+    <div class="split" style="margin-top:18px">
+      <div class="phrases">
+        <div class="phrase"><q>an eight-week pilot</q><p>Las notas del 8 de mayo no confirmaron si es un prototipo, una prueba o un lanzamiento en vivo. Sigue sin resolverse. <a class="cite" href="#d-pk" data-c="pre-kickoff-harbor-and-pine.md:13">PK 13</a></p></div>
+        <div class="phrase"><q>We should be able to confirm straight away.</q><p>Lo transmite Sales, con "I do not know whether that means every activity." Operaciones lo acot&oacute;. <a class="cite" href="#d-pk" data-c="pre-kickoff-harbor-and-pine.md:54">PK 54</a></p></div>
+        <div class="phrase"><q>start from scratch</q><p>Se refiere al sitio actual en todas las fuentes salvo Operaciones, que dice que no cambian todos los sistemas de los operadores. <a class="cite" href="#d-pk" data-c="pre-kickoff-harbor-and-pine.md:10">PK 10</a></p></div>
+      </div>
+      <div class="note">
+        <h3>Qui&eacute;n decide</h3>
+        <p>Nadie est&aacute; confirmado. "The Executive Lead appears to be the sponsor." <a class="cite" href="#d-pk" data-c="pre-kickoff-harbor-and-pine.md:41">PK 41</a> Ante un choque con la pol&iacute;tica de un operador: "We usually escalate, but it is not always the same person." <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:199">KO 199</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rise" style="--i:6">
+    <div class="sh"><h2 class="title">Tensiones abiertas</h2><span class="ref">overview &sect;10</span></div>
+    <ol class="tens" style="margin-top:18px">
+      <li><b>Inmediatez.</b> El Executive Lead: "Booking should feel immediate." Operaciones: "Not always."<span class="sub">Sobre si el pago alcanza para reservar el lugar. <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:43">KO 43</a> <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:58">KO 58</a></span></li>
+      <li><b>Una sola pol&iacute;tica de cancelaci&oacute;n.</b> "Can we just use one cancellation policy for the pilot?"<span class="sub">Operaciones: cada operador tiene acuerdos distintos. <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:187">KO 187</a></span></li>
+      <li><b>Hoteles primero.</b> Sales: "Maybe hotels should be the first audience."<span class="sub">El Executive Lead: "The first launch is still traveler-facing." <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:73">KO 73</a> <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:76">KO 76</a></span></li>
+      <li><b>IA y reservas pagas.</b> Operaciones: "Recommend another one, yes. Move a paid booking, no."<span class="sub">El l&iacute;mite est&aacute; dicho. Qui&eacute;n aprueba, no. <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:109">KO 109</a></span></li>
+      <li><b>Vender m&aacute;s o el d&iacute;a del tour.</b> "I still need more people to book. We need both sides to work."<span class="sub">Operaciones: "Discovery is not where most of my team spends time." Ninguna fuente las ordena. <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:91">KO 91</a> <a class="cite" href="#d-ko" data-c="Meetings/02-kickoff-transcript.md:88">KO 88</a></span></li>
+    </ol>
+  </section>
+
+  <section class="rise" style="--i:7">
+    <div class="split">
+      <div>
+        <div class="sh"><h2 class="title">D&iacute;a del tour, seg&uacute;n dos gu&iacute;as</h2><span class="ref">overview &sect;7</span></div>
+        <ul class="facts" style="margin-top:18px">
+          <li><div class="tags"><span class="chip">Lisboa</span></div><div>Las listas cambian tarde: una ten&iacute;a ocho personas y otra diez. "I check the list the night before, then again before I leave." <a class="cite" href="#d-gu" data-c="Meetings/04-guide-interview-notes.md:7">GU 7</a> <a class="cite" href="#d-gu" data-c="Meetings/04-guide-interview-notes.md:9">GU 9</a></div></li>
+          <li><div class="tags"><span class="chip">Barcelona</span></div><div>"People send me screenshots and ask if they are in the right place." Una foto es el plan B. <a class="cite" href="#d-gu" data-c="Meetings/04-guide-interview-notes.md:25">GU 25</a></div></li>
+          <li><div class="tags"><span class="chip">Ambos</span></div><div>Una herramienta nueva convivir&iacute;a con la mensajer&iacute;a. "Maybe, but I would keep it until I trust the new thing." <a class="cite" href="#d-gu" data-c="Meetings/04-guide-interview-notes.md:27">GU 27</a></div></li>
+        </ul>
+        <p class="meta" style="margin-top:12px">Solo dos gu&iacute;as. "Neither interview included observation of a full tour." <a class="cite" href="#d-gu" data-c="Meetings/04-guide-interview-notes.md:1">GU 1</a></p>
+      </div>
+      <div class="note">
+        <h3>Qu&eacute; falta</h3>
+        <ul>
+          <li>El archivo 03 (los archivos son 00, 01, 02, 04, 05)</li>
+          <li>El SOW firmado</li>
+          <li>Lista de sistemas con datos de clientes</li>
+          <li>KPIs base</li>
+          <li>La conversaci&oacute;n del 11 de mayo entre Sales y Operaciones</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="rise" style="--i:8">
+    <div class="sh"><h2 class="title">Siete preguntas para la reuni&oacute;n</h2><span class="ref">overview &sect;11</span></div>
+    <ol class="qs" style="margin-top:18px">
+      <li>Cuando dicen "an eight-week pilot", &iquest;qu&eacute; tiene que existir en la semana ocho: un prototipo, una prueba con viajeros reales o un lanzamiento en vivo en Lisboa y Barcelona?<em>Executive Lead</em></li>
+      <li>&iquest;Qu&eacute; parte del cat&aacute;logo tiene disponibilidad conectada y qu&eacute; parte responde por mail o WhatsApp?<em>Operaciones</em></li>
+      <li>Para cada tipo de cambio a una reserva paga, &iquest;qui&eacute;n aprueba: el viajero, Operaciones o el operador?<em>Executive Lead, Operaciones</em></li>
+      <li>&iquest;Qu&eacute; dicen los acuerdos actuales con operadores sobre cancelaci&oacute;n, reprogramaci&oacute;n, no-shows y reembolsos?<em>Operaciones</em></li>
+      <li>&iquest;Qu&eacute; datos tienen que funcionar con mala conexi&oacute;n, y eso significa despu&eacute;s de abrir el link una vez?<em>Executive Lead, Tech Lead</em></li>
+      <li>&iquest;Alguno de los cinco idiomas de hoteles es requisito de lanzamiento, o arrancamos con ingl&eacute;s y espa&ntilde;ol?<em>Sales</em></li>
+      <li>&iquest;Qu&eacute; n&uacute;meros existen hoy de reservas completadas, abandono, contactos a soporte y tiempo de gesti&oacute;n manual?<em>Executive Lead, Operaciones</em></li>
+    </ol>
+  </section>
+
+  <section class="rise" style="--i:9" id="docs">
+    <div class="sh"><h2 class="title">Los 6 documentos, resumidos</h2><span class="ref">para chequear de d&oacute;nde sale cada cosa</span></div>
+    <p class="lede">Cada resumen sale del original, con su cita (l&iacute;nea o p&aacute;gina). Toc&aacute; uno para abrirlo.</p>
+    <div class="docs">
+
+      <details class="doc" id="d-pk">
+        <summary><span class="dt">Notas pre-kickoff</span><span class="dm">PK &middot; 8 mayo &middot; Product Director</span></summary>
+        <p class="dfile">pre-kickoff-harbor-and-pine.md</p>
+        <div class="dbody">
+          <ul>
+            <li>Escritas tras un handoff con Sales, sin descubrimiento hecho. Todo lo del cliente llega de segunda mano. <span class="cite" data-c="pre-kickoff-harbor-and-pine.md:3">PK 3</span></li>
+            <li>Fase 1 de 550 horas con Product Manager, Product Designer y Tech Lead. El desarrollo es otra fase. <span class="cite" data-c="pre-kickoff-harbor-and-pine.md:12">PK 12</span> <span class="cite" data-c="pre-kickoff-harbor-and-pine.md:14">PK 14</span></li>
+            <li>El cliente mencion&oacute; "an eight-week pilot", sin confirmar qu&eacute; significa. <span class="cite" data-c="pre-kickoff-harbor-and-pine.md:13">PK 13</span></li>
+            <li>Sales mencion&oacute; reserva, itinerario y asistente de IA, sin lista acordada. Plataforma: un link en el tel&eacute;fono. <span class="cite" data-c="pre-kickoff-harbor-and-pine.md:27">PK 27</span> <span class="cite" data-c="pre-kickoff-harbor-and-pine.md:28">PK 28</span></li>
+          </ul>
+          <div class="no"><b>No dice</b>Nombres de contactos, sistemas actuales ni problemas actuales: "I do not have a breakdown of the current problems." <span class="cite" data-c="pre-kickoff-harbor-and-pine.md:19">PK 19</span></div>
+        </div>
+      </details>
+
+      <details class="doc" id="d-prd">
+        <summary><span class="dt">PRD v0.9</span><span class="dm">PRD &middot; 11 mayo &middot; autor no indicado</span></summary>
+        <p class="dfile">00-harbor-and-pine-prd-v0.9.pdf &middot; 4 p&aacute;ginas &middot; borrador para alinear</p>
+        <div class="dbody">
+          <ul>
+            <li>Producto: experiencia del viajero, herramientas para gu&iacute;as y Operaciones, y un asistente antes y durante la actividad. Mercados piloto: Lisboa y Barcelona. <span class="cite" data-c="00-harbor-and-pine-prd-v0.9.pdf:p1">PRD p1</span></li>
+            <li>Alcance candidato: explorar y comparar, disponibilidad y reserva, checkout sin cuenta, voucher. No es un backlog aprobado. <span class="cite" data-c="00-harbor-and-pine-prd-v0.9.pdf:p2">PRD p2</span></li>
+            <li>D&iacute;a del tour sin descarga, con informaci&oacute;n cr&iacute;tica que funcione con conectividad limitada; gu&iacute;as registran asistencia; Operaciones aprueba cambios. WCAG 2.2 AA en los flujos principales. <span class="cite" data-c="00-harbor-and-pine-prd-v0.9.pdf:p3">PRD p3</span></li>
+            <li>Nueve preguntas abiertas, entre ellas qu&eacute; significa la expectativa de ocho semanas. <span class="cite" data-c="00-harbor-and-pine-prd-v0.9.pdf:p4">PRD p4</span></li>
+          </ul>
+          <div class="no"><b>No dice</b>Que haya aprobaci&oacute;n del cliente: "It is not an approved implementation backlog" <span class="cite" data-c="00-harbor-and-pine-prd-v0.9.pdf:p2">PRD p2</span></div>
+        </div>
+      </details>
+
+      <details class="doc" id="d-wb">
+        <summary><span class="dt">Pizarra del d&iacute;a del tour</span><span class="dm">PZ &middot; sin fecha &middot; autor desconocido</span></summary>
+        <p class="dfile">01-whiteboard-day-of-tour.png &middot; foto</p>
+        <div class="dbody">
+          <ul>
+            <li>Flujo: BOOKING, MEETING POINT, CHECK-IN, TOUR, REVIEW. <span class="cite" data-c="01-whiteboard-day-of-tour.png:img">PZ</span></li>
+            <li>Notas bajo cada paso: "offline?", "guide late", "scan QR", "group split", "weather?", "change route". <span class="cite" data-c="01-whiteboard-day-of-tour.png:img">PZ</span></li>
+            <li>Stickies: NO APP?, OFFLINE MAP, WHATSAPP, AI SUGGESTS, WHO APPROVES?, REFUND?. <span class="cite" data-c="01-whiteboard-day-of-tour.png:img">PZ</span></li>
+          </ul>
+          <div class="no"><b>No dice</b>Qu&eacute; significan las flechas ni la caja AUTO tachada. "scan QR" aparece solo ac&aacute;. <span class="cite" data-c="01-whiteboard-day-of-tour.png:img">PZ</span></div>
+        </div>
+      </details>
+
+      <details class="doc" id="d-ko">
+        <summary><span class="dt">Transcripci&oacute;n del kickoff</span><span class="dm">KO &middot; 12 mayo &middot; extracto</span></summary>
+        <p class="dfile">Meetings/02-kickoff-transcript.md &middot; termina en 25:00</p>
+        <div class="dbody">
+          <ul>
+            <li>Meta del Executive Lead: "The goal is bigger than a nicer website." Plataforma nueva, sin mostrar el sitio actual. <span class="cite" data-c="Meetings/02-kickoff-transcript.md:28">KO 28</span> <span class="cite" data-c="Meetings/02-kickoff-transcript.md:34">KO 34</span></li>
+            <li>Reserva: deseo de inmediatez; Operaciones puede confirmar al instante cuando la disponibilidad est&aacute; conectada. <span class="cite" data-c="Meetings/02-kickoff-transcript.md:43">KO 43</span> <span class="cite" data-c="Meetings/02-kickoff-transcript.md:52">KO 52</span></li>
+            <li>Primer lanzamiento para viajeros; hoteles despu&eacute;s; sin cuenta ni descarga. <span class="cite" data-c="Meetings/02-kickoff-transcript.md:76">KO 76</span> <span class="cite" data-c="Meetings/02-kickoff-transcript.md:148">KO 148</span></li>
+            <li>Piloto de ocho semanas: lo que quiere el Executive Lead frente a lo que el Tech Lead no puede confirmar. <span class="cite" data-c="Meetings/02-kickoff-transcript.md:172">KO 172</span> <span class="cite" data-c="Meetings/02-kickoff-transcript.md:175">KO 175</span></li>
+          </ul>
+          <div class="no"><b>No dice</b>Alcance ni fecha acordados: "We have not agreed the implementation scope or launch date today." <span class="cite" data-c="Meetings/02-kickoff-transcript.md:181">KO 181</span></div>
+        </div>
+      </details>
+
+      <details class="doc" id="d-gu">
+        <summary><span class="dt">Notas de entrevistas a gu&iacute;as</span><span class="dm">GU &middot; 13&ndash;14 mayo &middot; 2 gu&iacute;as</span></summary>
+        <p class="dfile">Meetings/04-guide-interview-notes.md &middot; notas del entrevistador, no textual</p>
+        <div class="dbody">
+          <ul>
+            <li>Gu&iacute;a A (Lisboa): las listas llegan tarde y cambian de ocho a diez personas. No quiere formularios con el grupo esperando. <span class="cite" data-c="Meetings/04-guide-interview-notes.md:9">GU 9</span> <span class="cite" data-c="Meetings/04-guide-interview-notes.md:11">GU 11</span></li>
+            <li>Gu&iacute;a B (Barcelona): tel&eacute;fono Android viejo con bater&iacute;a justa. <span class="cite" data-c="Meetings/04-guide-interview-notes.md:23">GU 23</span></li>
+            <li>Los grupos preguntan si est&aacute;n en el lugar correcto; usa una foto como plan B. <span class="cite" data-c="Meetings/04-guide-interview-notes.md:25">GU 25</span></li>
+            <li>Mantendr&iacute;a la mensajer&iacute;a hasta confiar en la herramienta nueva. <span class="cite" data-c="Meetings/04-guide-interview-notes.md:27">GU 27</span></li>
+          </ul>
+          <div class="no"><b>No cubierto</b>Reembolsos, aprobaciones, llegada parcial de grupos, recuperaci&oacute;n de cuenta, pagos, hoteles y frecuencia de los problemas. <span class="cite" data-c="Meetings/04-guide-interview-notes.md:19">GU 19</span> <span class="cite" data-c="Meetings/04-guide-interview-notes.md:39">GU 39</span></div>
+        </div>
+      </details>
+
+      <details class="doc" id="d-cp">
+        <summary><span class="dt">Competidor: GetYourGuide</span><span class="dm">CP &middot; sin fecha &middot; autor no indicado</span></summary>
+        <p class="dfile">05-competitor-overview-getyourguide.pdf &middot; 1 p&aacute;gina</p>
+        <div class="dbody">
+          <ul>
+            <li>Es un punto de partida para investigar, no una investigaci&oacute;n. <span class="cite" data-c="05-competitor-overview-getyourguide.pdf:p1">CP p1</span></li>
+            <li>"It should not be treated as a complete model for Harbor &amp; Pine, which also needs to coordinate guides, operators, and day-of exceptions." <span class="cite" data-c="05-competitor-overview-getyourguide.pdf:p1">CP p1</span></li>
+            <li>Lista &aacute;reas a revisar y preguntas, por ejemplo "How does the product communicate booking certainty?" <span class="cite" data-c="05-competitor-overview-getyourguide.pdf:p1">CP p1</span></li>
+          </ul>
+          <div class="no"><b>No dice</b>Ning&uacute;n hallazgo sobre GetYourGuide. Nadie lo revis&oacute; todav&iacute;a.</div>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <footer>
+    <span>Cada punto sale de <span class="mono">project-overview-pre-kickoff.md</span> y de los originales; las citas llevan l&iacute;nea o p&aacute;gina.</span>
+    <span class="mono">borrador &middot; no promovido a latest</span>
+  </footer>
+</div>
+<script>
+  function openFromHash() {
+    var d = location.hash ? document.querySelector(location.hash) : null;
+    if (d && d.tagName === "DETAILS") d.open = true;
+  }
+  window.addEventListener("hashchange", openFromHash);
+  window.addEventListener("beforeprint", function () {
+    document.querySelectorAll("details.doc").forEach(function (d) { d.open = true; });
+  });
+  openFromHash();
+</script>
+</body>
+</html>
