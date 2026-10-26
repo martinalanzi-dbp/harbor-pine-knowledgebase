@@ -71,10 +71,10 @@ Canonical, reviewed, consumable. These are the source of truth for this layer. E
 
 | Document | What It Covers | Structure |
 |---|---|---|
-| [Product Brief](latest/product-brief.md) | Problem space, target users, product vision, scope, assumptions, relationship to business goals | Single file |
-| [User Personas](latest/user-personas.md) | Who the product serves — distinct user types, goals, pain points, behaviors | Single file |
-| [Domain Glossary](latest/domain-glossary.md) | Shared vocabulary — domain-specific terms, acronyms, and definitions used across all layers | Single file |
-| [Success Metrics](latest/success-metrics.md) | Product-level KPIs, measurement approach, baselines and targets | Single file |
+| [Product Brief](latest/Templates/product-brief.md) | Problem space, target users, product vision, scope, assumptions, relationship to business goals | Single file |
+| [User Personas](latest/Templates/user-personas.md) | Who the product serves — distinct user types, goals, pain points, behaviors | Single file |
+| [Domain Glossary](latest/Templates/domain-glossary.md) | Shared vocabulary — domain-specific terms, acronyms, and definitions used across all layers | Single file |
+| [Success Metrics](latest/Templates/success-metrics.md) | Product-level KPIs, measurement approach, baselines and targets | Single file |
 | [User Journeys](latest/user-journeys/) | Cross-feature views of how users accomplish goals through the product | One file per journey |
 | [Feature Specs](latest/features/) | Product behavior defined per feature — business rules, acceptance criteria, edge cases, scope | One file per feature, organized by domain |
 

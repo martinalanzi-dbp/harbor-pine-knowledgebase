@@ -5,7 +5,7 @@ owner: "Martina Lanzi"
 status: needs_review
 last_updated: 2026-10-26
 relates_to:
-  - layers/layer-0-business/latest/business-overview.md
+  - layers/layer-0-business/latest/Templates/business-overview.md
 sources:
   - layers/layer-0-business/raw-inputs/05-competitor-overview-getyourguide.pdf
   - layers/layer-0-business/raw-inputs/pre-kickoff-harbor-and-pine.md

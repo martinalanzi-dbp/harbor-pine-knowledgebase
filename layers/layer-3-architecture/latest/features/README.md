@@ -116,4 +116,4 @@ For larger upstream changes (feature scope change, major business rule revision)
 
 ## Template
 
-See [_example-domain/_example-feature-technical-spec.md](_example-domain/_example-feature-technical-spec.md) for the Feature Technical Spec template.
+See [_example-domain/_example-feature-technical-spec.md](../Templates/features/_example-domain/_example-feature-technical-spec.md) for the Feature Technical Spec template.

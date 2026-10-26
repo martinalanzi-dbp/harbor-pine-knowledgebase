@@ -5,9 +5,9 @@ owner: "Martina Lanzi"
 status: needs_review
 last_updated: 2026-10-26
 relates_to:
-  - layers/layer-0-business/latest/strategic-goals-and-constraints.md
-  - layers/layer-0-business/latest/business-overview.md
-  - layers/layer-0-business/latest/stakeholder-map.md
+  - layers/layer-0-business/latest/Templates/strategic-goals-and-constraints.md
+  - layers/layer-0-business/latest/Templates/business-overview.md
+  - layers/layer-0-business/latest/Templates/stakeholder-map.md
 sources:
   - layers/layer-0-business/raw-inputs/pre-kickoff-harbor-and-pine.md
   - layers/layer-0-business/raw-inputs/00-harbor-and-pine-prd-v0.9.pdf
@@ -93,7 +93,7 @@ Acceptable manual effort, supported exceptions, temporary workarounds and launch
 
 ## Relationship to Business Goals
 
-The product serves the strategic goals in [Strategic Goals and Constraints](../../layer-0-business/latest/strategic-goals-and-constraints.md):
+The product serves the strategic goals in [Strategic Goals and Constraints](../../layer-0-business/latest/Templates/strategic-goals-and-constraints.md):
 - **Completed bookings:** a quick, honest booking flow and guest checkout serve this goal.
 - **Day-of reliability:** the traveler day-of experience, the offline guide list and Operations visibility serve this goal.
 - **Less manual work and fewer avoidable support questions:** exception owners, approvals and timely updates serve this goal, so the new front end does not add messages for Operations.

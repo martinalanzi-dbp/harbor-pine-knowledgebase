@@ -57,4 +57,4 @@ relates_to:
 
 ## Template
 
-See [_example-domain/_example-feature-design-spec.md](_example-domain/_example-feature-design-spec.md) for the feature design spec template.
+See [_example-domain/_example-feature-design-spec.md](../Templates/features/_example-domain/_example-feature-design-spec.md) for the feature design spec template.

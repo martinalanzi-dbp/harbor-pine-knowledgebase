@@ -5,8 +5,8 @@ owner: "Martina Lanzi"
 status: needs_review
 last_updated: 2026-10-26
 relates_to:
-  - layers/layer-1-product/latest/product-brief.md
-  - layers/layer-1-product/latest/user-personas.md
+  - layers/layer-1-product/latest/Templates/product-brief.md
+  - layers/layer-1-product/latest/Templates/user-personas.md
 sources:
   - layers/layer-0-business/raw-inputs/Meetings/04-guide-interview-notes.md
   - layers/layer-0-business/raw-inputs/Meetings/02-kickoff-transcript.md

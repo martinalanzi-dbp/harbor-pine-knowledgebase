@@ -5,7 +5,7 @@ owner: "Martina Lanzi"
 status: needs_review
 last_updated: 2026-10-26
 relates_to:
-  - layers/layer-0-business/latest/strategic-goals-and-constraints.md
+  - layers/layer-0-business/latest/Templates/strategic-goals-and-constraints.md
 sources:
   - layers/layer-0-business/raw-inputs/pre-kickoff-harbor-and-pine.md
   - layers/layer-0-business/raw-inputs/00-harbor-and-pine-prd-v0.9.pdf

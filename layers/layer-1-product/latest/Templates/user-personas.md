@@ -5,8 +5,8 @@ owner: "Martina Lanzi"
 status: needs_review
 last_updated: 2026-10-26
 relates_to:
-  - layers/layer-0-business/latest/business-overview.md
-  - layers/layer-0-business/latest/stakeholder-map.md
+  - layers/layer-0-business/latest/Templates/business-overview.md
+  - layers/layer-0-business/latest/Templates/stakeholder-map.md
 sources:
   - layers/layer-0-business/raw-inputs/00-harbor-and-pine-prd-v0.9.pdf
   - layers/layer-0-business/raw-inputs/Meetings/02-kickoff-transcript.md

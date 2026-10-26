@@ -5,8 +5,8 @@ owner: "Martina Lanzi"
 status: needs_review
 last_updated: 2026-10-26
 relates_to:
-  - layers/layer-1-product/latest/product-brief.md
-  - layers/layer-1-product/latest/user-personas.md
+  - layers/layer-1-product/latest/Templates/product-brief.md
+  - layers/layer-1-product/latest/Templates/user-personas.md
 sources:
   - layers/layer-0-business/raw-inputs/00-harbor-and-pine-prd-v0.9.pdf
   - layers/layer-0-business/raw-inputs/Whiteboard Image Information/01-whiteboard-day-of-tour.png
@@ -17,7 +17,7 @@ sources:
 
 # User Journey: Traveler — Book to Activity Day
 
-How a traveler goes from choosing an activity to completing it and leaving feedback. The steps follow the PRD v0.9 traveler journey. The feature column uses the candidate feature areas from the [Product Brief](../product-brief.md), and no feature specs exist yet. The whiteboard day-of flow (Booking → Meeting point → Check-in → Tour → Review) supports the same sequence, but its notes are prompts for discussion, not decisions.
+How a traveler goes from choosing an activity to completing it and leaving feedback. The steps follow the PRD v0.9 traveler journey. The feature column uses the candidate feature areas from the [Product Brief](../Templates/product-brief.md), and no feature specs exist yet. The whiteboard day-of flow (Booking → Meeting point → Check-in → Tour → Review) supports the same sequence, but its notes are prompts for discussion, not decisions.
 
 ---
 

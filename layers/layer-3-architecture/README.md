@@ -74,9 +74,9 @@ Canonical, reviewed, consumable. These are the source of truth for this layer. E
 
 | Document | Scope | What It Covers |
 |---|---|---|
-| [Architecture Overview](latest/architecture-overview.md) | One per project | System context, container view, key integrations, data architecture, security, infrastructure |
-| [Non-functional Requirements](latest/nonfunctional-requirements.md) | One per project | Performance, scalability, availability, security, observability, compliance |
-| [Tech Stack Rationale](latest/tech-stack-rationale.md) | One per project | Core stack, infrastructure, third-party services, development tooling — with rationale for each choice |
+| [Architecture Overview](latest/Templates/architecture-overview.md) | One per project | System context, container view, key integrations, data architecture, security, infrastructure |
+| [Non-functional Requirements](latest/Templates/nonfunctional-requirements.md) | One per project | Performance, scalability, availability, security, observability, compliance |
+| [Tech Stack Rationale](latest/Templates/tech-stack-rationale.md) | One per project | Core stack, infrastructure, third-party services, development tooling — with rationale for each choice |
 | [ADRs](latest/adrs/) | One per significant decision | Context, decision, consequences, alternatives considered |
 | [Feature Technical Specs](latest/features/) | One per feature (mirrors Layer 1 structure) | Full-stack technical specification: data model, API contracts, frontend architecture, key flows, work breakdown |
 

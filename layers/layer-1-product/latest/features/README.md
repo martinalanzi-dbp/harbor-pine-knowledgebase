@@ -57,4 +57,4 @@ Every feature spec carries full YAML frontmatter for cascade tracking. The `rela
 
 ## Template
 
-See [_example-domain/_example-feature-spec.md](_example-domain/_example-feature-spec.md) for the feature spec template.
+See [_example-domain/_example-feature-spec.md](../Templates/features/_example-domain/_example-feature-spec.md) for the feature spec template.
