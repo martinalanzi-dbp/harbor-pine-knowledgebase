@@ -26,7 +26,7 @@ The following example templates show common patterns for intermediate artifacts.
 
 | Example | Pattern | When to Use |
 | --- | --- | --- |
-| [Ideation](_example-ideation.md) | Problem discovery and initial idea generation | When starting from a vague or open-ended brief that needs to be broken into concrete problem areas |
-| [Problem Statement](_example-problem-statement.md) | Problem framing for a product area | During early discovery to sharpen thinking before writing feature specs |
-| [Gap Analysis](_example-gap-analysis.md) | Contradictions and unknowns tracker | When raw inputs conflict or key information is missing |
-| [Solution Exploration](_example-solution-exploration.md) | Brainstorming and option evaluation | When exploring possible approaches for a feature before committing to a direction |
+| [Ideation](Templates/_example-ideation.md) | Problem discovery and initial idea generation | When starting from a vague or open-ended brief that needs to be broken into concrete problem areas |
+| [Problem Statement](Templates/_example-problem-statement.md) | Problem framing for a product area | During early discovery to sharpen thinking before writing feature specs |
+| [Gap Analysis](Templates/_example-gap-analysis.md) | Contradictions and unknowns tracker | When raw inputs conflict or key information is missing |
+| [Solution Exploration](Templates/_example-solution-exploration.md) | Brainstorming and option evaluation | When exploring possible approaches for a feature before committing to a direction |

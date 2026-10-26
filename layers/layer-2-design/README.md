@@ -65,7 +65,7 @@ Canonical, reviewed, consumable. These are the source of truth for this layer. E
 
 | Document | Scope | What It Covers |
 |---|---|---|
-| [Design System Reference](latest/design-system-reference.md) | One per project | Figma library, design variables, naming conventions, component usage rules, pattern decisions, accessibility standards |
+| [Design System Reference](latest/Templates/design-system-reference.md) | One per project | Figma library, design variables, naming conventions, component usage rules, pattern decisions, accessibility standards |
 | [Feature Design Specs](latest/features/) | One per feature (mirrors Layer 1 structure) | Design assets (Figma links), states and behavior, interactions and motion, responsive behavior, content specifications, accessibility |
 
 

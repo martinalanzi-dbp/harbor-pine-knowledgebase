@@ -66,9 +66,9 @@ Canonical, reviewed, consumable. These are the source of truth for this layer. E
 
 | Document | Required | What It Covers |
 |---|---|---|
-| [Development Guide](latest/development-guide.md) | Mandatory | Coding conventions, testing strategy, branch/PR workflow, key implementation patterns, project-specific tooling |
-| [Deployment Guide](latest/deployment-guide.md) | Optional | Environments, deployment process, CI/CD pipeline, rollback procedure |
-| [Monitoring & Observability](latest/monitoring-and-observability.md) | Optional | What is monitored, dashboards, alerting, logging |
+| [Development Guide](latest/Templates/development-guide.md) | Mandatory | Coding conventions, testing strategy, branch/PR workflow, key implementation patterns, project-specific tooling |
+| [Deployment Guide](latest/Templates/deployment-guide.md) | Optional | Environments, deployment process, CI/CD pipeline, rollback procedure |
+| [Monitoring & Observability](latest/Templates/monitoring-and-observability.md) | Optional | What is monitored, dashboards, alerting, logging |
 
 
 ---

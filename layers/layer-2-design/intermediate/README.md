@@ -26,5 +26,5 @@ The following example templates show common patterns for intermediate artifacts.
 
 | Example | Pattern | When to Use |
 | ------- | ------- | ----------- |
-| [Design Exploration](_example-design-exploration.md) | Documenting direction decisions and trade-offs during iterative design | When exploring multiple approaches for a feature or pattern before committing to a direction |
-| [Usability Findings](_example-usability-findings.md) | Synthesizing usability test results or critique feedback into actionable changes | After a usability study, design review, or critique session |
+| [Design Exploration](Templates/_example-design-exploration.md) | Documenting direction decisions and trade-offs during iterative design | When exploring multiple approaches for a feature or pattern before committing to a direction |
+| [Usability Findings](Templates/_example-usability-findings.md) | Synthesizing usability test results or critique feedback into actionable changes | After a usability study, design review, or critique session |
