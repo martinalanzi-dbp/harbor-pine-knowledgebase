@@ -21,4 +21,4 @@ Strategic, cross-feature views of how users accomplish goals through the product
 
 ## Template
 
-See [_example-user-journey.md](_example-user-journey.md) for the journey template.
+See [_example-user-journey.md](../Templates/user-journeys/_example-user-journey.md) for the journey template.

@@ -26,8 +26,8 @@ The following example templates show common patterns for intermediate artifacts.
 
 | Example                                                  | Pattern                                        | When to Use                                                               |
 | -------------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------- |
-| [Meeting/Interview Summary](_example-meeting-summary.md) | Synthesizing a human conversation              | After discovery calls, stakeholder interviews, or client meetings         |
-| [Research Synthesis](_example-research-synthesis.md)     | AI-assisted analysis of inputs or web research | When analyzing client materials, competitor information, or industry data |
-| [Discovery Notes](_example-discovery-notes.md)           | Ad-hoc observations, open questions, gaps      | Throughout discovery to capture things before they are forgotten          |
+| [Meeting/Interview Summary](Templates/_example-meeting-summary.md) | Synthesizing a human conversation              | After discovery calls, stakeholder interviews, or client meetings         |
+| [Research Synthesis](Templates/_example-research-synthesis.md)     | AI-assisted analysis of inputs or web research | When analyzing client materials, competitor information, or industry data |
+| [Discovery Notes](Templates/_example-discovery-notes.md)           | Ad-hoc observations, open questions, gaps      | Throughout discovery to capture things before they are forgotten          |
 
 

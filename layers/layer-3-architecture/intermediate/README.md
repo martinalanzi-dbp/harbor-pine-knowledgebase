@@ -28,6 +28,6 @@ The following example templates show common patterns for intermediate artifacts.
 
 | Example | Pattern | When to Use |
 | ------- | ------- | ----------- |
-| [Tech Spike](_example-tech-spike.md) | Structured results from a time-boxed technical investigation | When validating a technical approach, evaluating feasibility, or answering a specific technical question before committing to a direction |
-| [Integration Evaluation](_example-integration-evaluation.md) | Structured comparison of vendor or service options | When choosing between third-party services, libraries, or integration approaches that have meaningful trade-offs |
-| [Decision Log](_example-decision-log.md) | Running list of technical decisions made during architecture work | Throughout the architecture process — captures decisions before they are formalized as ADRs, so the reasoning is not lost |
+| [Tech Spike](Templates/_example-tech-spike.md) | Structured results from a time-boxed technical investigation | When validating a technical approach, evaluating feasibility, or answering a specific technical question before committing to a direction |
+| [Integration Evaluation](Templates/_example-integration-evaluation.md) | Structured comparison of vendor or service options | When choosing between third-party services, libraries, or integration approaches that have meaningful trade-offs |
+| [Decision Log](Templates/_example-decision-log.md) | Running list of technical decisions made during architecture work | Throughout the architecture process — captures decisions before they are formalized as ADRs, so the reasoning is not lost |

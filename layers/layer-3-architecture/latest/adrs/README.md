@@ -16,7 +16,7 @@ Write an ADR when a decision meets one or more of these criteria:
 - It has compliance, security, or operational implications
 - It overrides or departs from an established pattern in the codebase or in this framework
 
-For smaller decisions that don't meet these criteria, use the [Decision Log](../../intermediate/_example-decision-log.md) in `intermediate/`.
+For smaller decisions that don't meet these criteria, use the [Decision Log](../../intermediate/Templates/_example-decision-log.md) in `intermediate/`.
 
 ---
 
@@ -81,4 +81,4 @@ The only field that changes after acceptance is `adr_status` (when deprecated or
 
 ## Template
 
-See [_example-adr.md](_example-adr.md) for the ADR template.
+See [_example-adr.md](../Templates/adrs/_example-adr.md) for the ADR template.

@@ -60,10 +60,10 @@ Canonical, reviewed, consumable. These are the source of truth for this layer. E
 
 | Document | What It Covers |
 |---|---|
-| [Business Overview](latest/business-overview.md) | Company identity, business model, customer segments, organizational structure, existing systems |
-| [Strategic Goals and Constraints](latest/strategic-goals-and-constraints.md) | Business objectives, engagement drivers, constraints by type |
-| [Stakeholder Map](latest/stakeholder-map.md) | People, roles, decision-making authority, influence, dynamics |
-| [Competitive Landscape](latest/competitive-landscape.md) | Market position, competitors, differentiators, industry trends |
+| [Business Overview](latest/Templates/business-overview.md) | Company identity, business model, customer segments, organizational structure, existing systems |
+| [Strategic Goals and Constraints](latest/Templates/strategic-goals-and-constraints.md) | Business objectives, engagement drivers, constraints by type |
+| [Stakeholder Map](latest/Templates/stakeholder-map.md) | People, roles, decision-making authority, influence, dynamics |
+| [Competitive Landscape](latest/Templates/competitive-landscape.md) | Market position, competitors, differentiators, industry trends |
 
 ---
 
