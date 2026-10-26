@@ -16,7 +16,8 @@ Strategic, cross-feature views of how users accomplish goals through the product
 
 | Journey | Primary Persona | Features Involved | Status |
 | ------- | --------------- | ----------------- | ------ |
-|         |                 |                   |        |
+| [Traveler — Book to Activity Day](traveler-book-to-activity-day.md) | Traveler | Browse and activity details; Availability and booking; Guest checkout and booking access; Confirmation and voucher; Day-of traveler experience; Guide experience | needs_review |
+| [Guide — Run an Activity Day](guide-run-activity-day.md) | Guide | Guide experience; Day-of traveler experience; Operations experience | needs_review |
 
 
 ## Template

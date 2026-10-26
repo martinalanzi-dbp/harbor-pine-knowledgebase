@@ -4,8 +4,8 @@ layer: architecture
 owner: ""
 last_updated: ""
 relates_to:
-  - layers/layer-1-product/latest/product-brief.md
-  - layers/layer-1-product/latest/domain-glossary.md
+  - layers/layer-1-product/latest/Templates/product-brief.md
+  - layers/layer-1-product/latest/Templates/domain-glossary.md
 status: in_progress
 ---
 
